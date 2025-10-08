@@ -17,13 +17,13 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 
 ## 👥 팀 구성원
 
-| 이름 | 이메일 |
-|------|--------|
-| [황정목](https://www.linkedin.com/in/jeongmok-hwang-51a09720a/) | tyler@makestar.com |
-| [김서연](https://www.linkedin.com/in/%EC%84%9C%EC%97%B0-%EA%B9%80-0070b0254/) | maruruyeon@gmail.com |
-| [조현민](https://www.linkedin.com/in/hyeonmin-cho-145992b9/) | galaxyeunha0530@gmail.com |
-| [정다빈](https://www.linkedin.com/in/manyb2ns/) | manyb2ns@gmail.com |
-| [허유정](https://www.linkedin.com/in/yoojunghuh/) | gjenfwo@gmail.com |
+| 이름 | 이메일 | 직무 |
+|------|--------|-----|
+| [황정목](https://www.linkedin.com/in/jeongmok-hwang-51a09720a/) | tyler@makestar.com | DevOps Engineer |
+| [김서연](https://www.linkedin.com/in/%EC%84%9C%EC%97%B0-%EA%B9%80-0070b0254/) | maruruyeon@gmail.com | Cloud Engineer |
+| [조현민](https://www.linkedin.com/in/hyeonmin-cho-145992b9/) | galaxyeunha0530@gmail.com | Software Engineer |
+| [정다빈](https://www.linkedin.com/in/manyb2ns/) | manyb2ns@gmail.com | Solution Architect |
+| [허유정](https://www.linkedin.com/in/yoojunghuh/) | gjenfwo@gmail.com | DevOps Engineer |
 
 > 💡 **이름을 클릭하면 LinkedIn 프로필로 이동합니다**
 
@@ -439,11 +439,11 @@ npm run type-check    # TypeScript 검증
 
 ## 📚 주요 문서
 
-- [인프라 구성 가이드](traffic-tacos-infra-iac/README.md)
-- [API 계약 문서](proto-contracts/README.md)
-- [DynamoDB 스펙](traffic-tacos-infra-iac/docs/spec/dynamodb-spec.md)
-- [EventBridge 스펙](traffic-tacos-infra-iac/docs/spec/eventbridge-spec.md)
-- [개발 수칙](gateway-api/.cursor/rules/rules-must-be-followed.mdc)
+- [인프라 구성 가이드](https://github.com/traffic-tacos/traffic-tacos-infra-iac/README.md)
+- [API 계약 문서](https://github.com/traffic-tacos/proto-contracts/README.md)
+- [DynamoDB 스펙](https://github.com/traffic-tacos/traffic-tacos-infra-iac/docs/spec/dynamodb-spec.md)
+- [EventBridge 스펙](https://github.com/traffic-tacos/traffic-tacos-infra-iac/docs/spec/eventbridge-spec.md)
+- [개발 수칙](https://github.com/traffic-tacos/gateway-api/.cursor/rules/rules-must-be-followed.mdc)
 
 ## 🤝 기여 가이드
 
@@ -473,12 +473,6 @@ perf: 성능 개선
 3. 테스트 통과 확인
 4. PR 생성 및 리뷰 요청
 5. Merge 승인 후 배포
-
-## 📞 연락처
-
-- **조직**: Traffic Tacos Team
-- **프로젝트 목표**: 30k RPS 안정 처리 티켓 예약 플랫폼
-- **라이선스**: Internal Use Only
 
 ---
 
