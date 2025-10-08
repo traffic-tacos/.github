@@ -19,7 +19,7 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 
 | 이름 | 이메일 | 직무 |
 |------|--------|-----|
-| [황정목](https://www.linkedin.com/in/jeongmok-hwang-51a09720a/) | tyler@makestar.com | DevOps Engineer |
+| [황정목](https://www.linkedin.com/in/jeongmok-hwang-51a09720a/) | xnslqjtmghaf@gmail.com | DevOps Engineer |
 | [김서연](https://www.linkedin.com/in/%EC%84%9C%EC%97%B0-%EA%B9%80-0070b0254/) | maruruyeon@gmail.com | Cloud Engineer |
 | [조현민](https://www.linkedin.com/in/hyeonmin-cho-145992b9/) | galaxyeunha0530@gmail.com | Software Engineer |
 | [정다빈](https://www.linkedin.com/in/manyb2ns/) | manyb2ns@gmail.com | Solution Architect |
@@ -139,7 +139,7 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 
 ### 개발 도구
 
-- **IaC**: Terraform 1.5+
+- **IaC**: Terraform 1.8+
 - **컨테이너**: Docker, Kubernetes
 - **CI/CD**: GitHub Actions
 - **모니터링**: Prometheus, Grafana, Jaeger/Tempo, Loki
@@ -297,7 +297,7 @@ grpc_call_duration_seconds{service, method}
 - Go 1.22+
 - Java 17+ (Kotlin)
 - Node.js 18+
-- Terraform 1.5+
+- Terraform 1.8+
 - kubectl, helm
 
 ### 로컬 실행
