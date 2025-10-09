@@ -28,6 +28,7 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 > 💡 **이름을 클릭하면 LinkedIn 프로필로 이동합니다**
 
 ## 🏗️ 시스템 아키텍처
+<img width="1756" height="1094" alt="image" src="https://github.com/user-attachments/assets/5deb4016-af3b-4306-b6fa-55a84fd9d276" />
 
 ### 계층별 구조
 
