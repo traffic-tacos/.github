@@ -141,8 +141,9 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 
 - **IaC**: Terraform 1.8+
 - **컨테이너**: Docker, Kubernetes
-- **CI/CD**: GitHub Actions
-- **모니터링**: Prometheus, Grafana, Jaeger/Tempo, Loki
+- **CI/CD**: GitHub Actions, ArgoCD
+- **모니터링**: Prometheus(Metric), Grafana(AMG), CloudWatch(Log), X-Ray(Trace)
+- **부하테스트**: k6
 
 ## 🔄 핵심 비즈니스 플로우
 
@@ -155,7 +156,7 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 
 2. 실시간 위치 업데이트 (WebSocket)
    - GET /api/v1/queue/status
-   - 예상 대기시간 제공
+   - 매 2초 예상 대기시간 제공
 
 3. 입장 허가 → POST /api/v1/queue/enter
    - reservation_token 발급 (TTL: 30초)
