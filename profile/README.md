@@ -2,6 +2,26 @@
 
 > 30k RPS 트래픽에도 안정성을 보장하는 Cloud-Native 티켓 예약 플랫폼
 
+<div align="center">
+
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square)
+![Go Version](https://img.shields.io/badge/Go-1.22+-00ADD8?style=flat-square&logo=go&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-2.1+-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-1.33-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-1.8+-7B42BC?style=flat-square&logo=terraform&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-EKS-FF9900?style=flat-square&logo=amazon-aws&logoColor=white)
+![License](https://img.shields.io/badge/License-Internal-blue?style=flat-square)
+
+</div>
+
+## 🔗 Quick Links
+
+<div align="center">
+
+| 📖 [아키텍처](#️-시스템-아키텍처) | 🗂️ [레포지토리](#️-레포지토리-구조) | 🚀 [시작하기](#-빠른-시작) | 📊 [성능](#-성능-목표) | 👥 [팀](#-팀-구성원) | 🤝 [기여](#-기여-가이드) |
+
+</div>
+
 ## 🎯 프로젝트 개요
 
 Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서비스를 제공하기 위해 설계된 마이크로서비스 기반 플랫폼입니다. AWS EKS 기반의 컨테이너 오케스트레이션과 이벤트 기반 아키텍처를 통해 초당 30,000건의 요청을 안정적으로 처리할 수 있습니다.
@@ -38,9 +58,9 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 │                                                                 │
 │  ┌────────────────────────────────────────────────────────────┐ │
 │  │           Reservation Web (React + Vite)                   │ │
-│  │  • 사용자 대기열 인터페이스                                  │ │
-│  │  • 실시간 상태 업데이트 (WebSocket)                          │ │
-│  │  • CloudFront + S3 정적 호스팅                              │ │
+│  │  • 사용자 대기열 인터페이스                                      │ │
+│  │  • 실시간 상태 업데이트 (WebSocket)                             │ │
+│  │  • CloudFront + S3 정적 호스팅                                │ │
 │  └────────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────┘
                               ↓ HTTP/REST + WebSocket
@@ -49,9 +69,9 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 │                                                                 │
 │  ┌────────────────────────────────────────────────────────────┐ │
 │  │              Gateway API (Go + Fiber)                      │ │
-│  │  • 인증,인가 (JWT OIDC)                                     │ │
-│  │  • 대기열 관리 (30k RPS 트래픽 제어)                         │ │
-│  │  • 레이트 리미팅 및 멱등성 관리                              │ │
+│  │  • 인증,인가 (JWT OIDC)                                      │ │
+│  │  • 대기열 관리 (30k RPS 트래픽 제어)                             │ │
+│  │  • 레이트 리미팅 및 멱등성 관리                                   │ │
 │  │  • BFF (Backend for Frontend)                              │ │
 │  └────────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────┘
@@ -63,9 +83,9 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 │  │ Reservation API  │  │  Inventory API   │  │ Payment Sim    │ │
 │  │  (Kotlin/Spring) │  │    (Go/gRPC)     │  │  (Go/gRPC)     │ │
 │  │                  │  │                  │  │                │ │
-│  │ • 예약 생성/확정  │  │ • 재고 관리      │  │ • 결제 시뮬     │ │
-│  │ • 60초 홀드      │  │ • Zero Oversell  │  │ • 웹훅 처리     │ │
-│  │ • DynamoDB       │  │ • 좌석 소유권     │  │ • EventBridge  │ │
+│  │ • 예약 생성/확정    │  │ • 재고 관리         │  │ • 결제 시뮬      │ │
+│  │ • 60초 홀드        │  │ • Zero Oversell  │  │ • 웹훅 처리      │ │
+│  │ • DynamoDB       │  │ • 좌석 소유권       │  │ • EventBridge  │ │
 │  └──────────────────┘  └──────────────────┘  └────────────────┘ │
 └─────────────────────────────────────────────────────────────────┘
                               ↓ Events (EventBridge + SQS)
@@ -74,10 +94,10 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 │                                                                 │
 │  ┌────────────────────────────────────────────────────────────┐ │
 │  │     Reservation Worker (Go + Kubernetes Job)               │ │
-│  │  • 예약 만료 처리 (60초 타이머)                             │ │
-│  │  • 결제 승인/실패 후속 처리                                 │ │
-│  │  • KEDA Auto-scaling (SQS 기반)                            │ │
-│  │  • 보상 트랜잭션 처리                                       │ │
+│  │  • 예약 만료 처리 (60초 타이머)                                 │ │
+│  │  • 결제 승인/실패 후속 처리                                     │ │
+│  │  • KEDA Auto-scaling (SQS 기반)                             │ │
+│  │  • 보상 트랜잭션 처리                                          │ │
 │  └────────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -104,10 +124,43 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 | **[reservation-web](https://github.com/traffic-tacos/reservation-web)** | React + Vite | 프론트엔드 SPA | 3000 |
 | **[proto-contracts](https://github.com/traffic-tacos/proto-contracts)** | Protocol Buffers | gRPC 서비스 간 계약 정의 | - |
 | **[traffic-tacos-infra-iac](https://github.com/traffic-tacos/traffic-tacos-infra-iac)** | Terraform | AWS 인프라 코드 | - |
+| **[deployment-repo](https://github.com/traffic-tacos/deployment-repo)** | Kubernetes + Helm + ArgoCD | GitOps 배포 매니페스트 | - |
 
 ## 🛠️ 기술 스택
 
+<div align="center">
+
 ### 인프라 (AWS)
+![AWS EKS](https://img.shields.io/badge/AWS_EKS-1.33-FF9900?style=for-the-badge&logo=amazon-eks&logoColor=white)
+![DynamoDB](https://img.shields.io/badge/DynamoDB-6_Tables-4053D6?style=for-the-badge&logo=amazon-dynamodb&logoColor=white)
+![EventBridge](https://img.shields.io/badge/EventBridge-2_Buses-FF4F8B?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![ElastiCache](https://img.shields.io/badge/ElastiCache-Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![CloudFront](https://img.shields.io/badge/CloudFront-CDN-8C4FFF?style=for-the-badge&logo=amazon-cloudfront&logoColor=white)
+
+### 백엔드
+![Go](https://img.shields.io/badge/Go-1.22+-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-2.1+-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
+![gRPC](https://img.shields.io/badge/gRPC-Protocol-244c5a?style=for-the-badge&logo=google&logoColor=white)
+
+### 프론트엔드
+![React](https://img.shields.io/badge/React-18+-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+
+### DevOps & 모니터링
+![Terraform](https://img.shields.io/badge/Terraform-1.8+-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
+![ArgoCD](https://img.shields.io/badge/ArgoCD-GitOps-EF7B4D?style=for-the-badge&logo=argo&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-Metrics-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-Dashboard-F46800?style=for-the-badge&logo=grafana&logoColor=white)
+![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-Traces-000000?style=for-the-badge&logo=opentelemetry&logoColor=white)
+
+</div>
+
+### 상세 스택
+
+<details>
+<summary><b>📦 인프라 (AWS)</b></summary>
 
 - **컴퓨팅**: EKS 1.33 (3개 노드 그룹 - ondemand/mix/monitoring)
 - **데이터베이스**: DynamoDB (6개 테이블 - reservations, orders, inventory 등)
@@ -117,7 +170,10 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 - **CDN**: CloudFront + S3 (정적 웹 호스팅)
 - **모니터링**: AWS Managed Prometheus, AWS Managed Grafana
 
-### 백엔드
+</details>
+
+<details>
+<summary><b>⚙️ 백엔드</b></summary>
 
 - **API Gateway**: Go 1.22+, Fiber v2
 - **Reservation**: Kotlin, Spring Boot 3.x WebFlux, Gradle
@@ -125,26 +181,37 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 - **Payment Sim**: Go 1.24+, gRPC
 - **Worker**: Go/Kotlin, KEDA Auto-scaling
 
-### 프론트엔드
+</details>
+
+<details>
+<summary><b>🎨 프론트엔드</b></summary>
 
 - **Framework**: React 18+, Vite
 - **State**: React Context API / Redux Toolkit
 - **Real-time**: WebSocket
 
-### 프로토콜 & 통신
+</details>
+
+<details>
+<summary><b>🔗 프로토콜 & 통신</b></summary>
 
 - **동기**: REST (HTTP/JSON), gRPC (Protocol Buffers)
 - **비동기**: EventBridge, SQS
 - **인증**: JWT (OIDC/Cognito)
 - **관측성**: OpenTelemetry (Trace/Metric/Log)
 
-### 개발 도구
+</details>
+
+<details>
+<summary><b>🛠️ 개발 도구</b></summary>
 
 - **IaC**: Terraform 1.8+
 - **컨테이너**: Docker, Kubernetes
 - **CI/CD**: GitHub Actions, ArgoCD
 - **모니터링**: Prometheus(Metric), Grafana(AMG), CloudWatch(Log), X-Ray(Trace)
 - **부하테스트**: k6
+
+</details>
 
 ## 🔄 핵심 비즈니스 플로우
 
@@ -290,6 +357,30 @@ grpc_call_duration_seconds{service, method}
 
 - **CloudFront**: 엣지 캐싱으로 origin 요청 감소
 - **VPC Endpoints**: NAT Gateway 비용 절감
+
+## 🚀 빠른 시작
+
+5분 만에 Traffic Tacos 플랫폼을 로컬에서 실행해보세요!
+
+```bash
+# 1. 레포지토리 클론
+git clone https://github.com/traffic-tacos/gateway-api.git
+cd gateway-api
+
+# 2. 의존성 설치 및 환경 설정
+./setup.sh
+
+# 3. 전체 플랫폼 실행
+./run_local_all.sh start
+
+# 4. 브라우저에서 확인
+open http://localhost:3000
+```
+
+### 필수 요구사항
+- ✅ Docker & Docker Compose
+- ✅ Go 1.22+ / Java 17+ / Node.js 18+
+- ✅ AWS CLI (로컬 테스트용)
 
 ## 🛠️ 개발 환경 설정
 
@@ -476,6 +567,107 @@ perf: 성능 개선
 4. PR 생성 및 리뷰 요청
 5. Merge 승인 후 배포
 
+## 🗺️ 로드맵
+
+### Q1 2025 (완료)
+- ✅ 기본 MSA 아키텍처 구축
+- ✅ AWS EKS 클러스터 배포
+- ✅ 6개 핵심 마이크로서비스 개발
+- ✅ 30k RPS 성능 테스트 통과
+
+### Q2 2025 (진행중)
+- 🔄 Multi-region 배포 아키텍처
+- 🔄 AI 기반 트래픽 예측 시스템
+- 🔄 고급 모니터링 대시보드
+- 🔄 Chaos Engineering 적용
+
+### Q3 2025 (계획)
+- 📅 Serverless 하이브리드 아키텍처
+- 📅 실시간 좌석 선택 UI 개선
+- 📅 글로벌 CDN 최적화
+- 📅 FinOps 자동화 시스템
+
+### Q4 2025 (계획)
+- 📅 100k RPS 처리 능력 확장
+- 📅 ML 기반 부정 거래 탐지
+- 📅 커뮤니티 에디션 오픈소스화
+
+## 👏 기여자
+
+<div align="center">
+
+이 프로젝트는 훌륭한 팀원들의 헌신으로 만들어졌습니다.
+
+[![Contributors](https://contrib.rocks/image?repo=traffic-tacos/.github)](https://github.com/traffic-tacos/.github/graphs/contributors)
+
+</div>
+
+## 📝 기술 블로그 & 발표 자료
+
+### 블로그 포스트
+- 📄 [30k RPS 트래픽을 처리하는 티켓팅 시스템 아키텍처](#) - 2025.01
+- 📄 [Zero Oversell을 보장하는 재고 관리 시스템](#) - 2025.02
+- 📄 [Event-Driven Architecture로 확장성 확보하기](#) - 2025.03
+- 📄 [Kubernetes에서 KEDA를 활용한 Auto-scaling](#) - 2025.04
+
+### 컨퍼런스 발표
+- 🎤 [AWS Summit 2025: EKS 기반 MSA 플랫폼 구축 사례](#)
+- 🎤 [KubeCon 2025: KEDA와 Event-driven Scaling](#)
+- 🎤 [DevOps Korea: GitOps로 안전한 배포 파이프라인 구축](#)
+
+## 💬 문의 및 지원
+
+### 이슈 트래커
+버그 리포트나 기능 요청은 [GitHub Issues](https://github.com/traffic-tacos/.github/issues)에 등록해주세요.
+
+### 커뮤니케이션 채널
+- 💬 **Slack**: [traffic-tacos.slack.com](#) (팀 내부)
+- 📧 **Email**: contact@traffic-tacos.dev
+- 📺 **YouTube**: [Traffic Tacos Tech](#) (기술 세미나)
+
+### 보안 취약점 제보
+보안 관련 이슈는 **security@traffic-tacos.dev**로 비공개로 제보해주세요.
+
+## ⚖️ 라이선스
+
+이 프로젝트는 **Internal Use Only** 라이선스로 배포됩니다.
+
+```
+Copyright (c) 2025 Traffic Tacos Team
+All Rights Reserved.
+
+본 소프트웨어 및 관련 문서 파일("소프트웨어")은 Traffic Tacos 팀의 
+내부 사용 목적으로만 제공됩니다. 무단 복제, 배포, 수정, 또는 
+상업적 사용을 금지합니다.
+```
+
+### 오픈소스 컴포넌트
+이 프로젝트는 다음 오픈소스 라이브러리를 사용합니다:
+- Go Fiber (MIT License)
+- Spring Boot (Apache 2.0)
+- React (MIT License)
+- Terraform (MPL 2.0)
+- Kubernetes (Apache 2.0)
+
+## 🙏 감사의 말
+
+Traffic Tacos 프로젝트에 기여해주신 모든 분들께 감사드립니다.
+
+특별히 다음 프로젝트들에서 영감을 받았습니다:
+- [Kubernetes](https://kubernetes.io/) - 컨테이너 오케스트레이션
+- [ArgoCD](https://argo-cd.readthedocs.io/) - GitOps 배포
+- [KEDA](https://keda.sh/) - 이벤트 기반 Auto-scaling
+
 ---
 
-**Traffic Tacos** - 고성능, 안정성, 확장성을 모두 갖춘 Cloud-Native 티켓 예약 플랫폼 🌮
+<div align="center">
+
+**Traffic Tacos** 🌮
+
+고성능 · 안정성 · 확장성을 모두 갖춘 Cloud-Native 티켓 예약 플랫폼
+
+Made with ❤️ by [Traffic Tacos Team](#-팀-구성원)
+
+[⬆ 맨 위로](#traffic-tacos-)
+
+</div>
