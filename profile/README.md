@@ -96,14 +96,14 @@ Traffic Tacos는 대규모 트래픽 환경에서 안정적인 티켓 예약 서
 
 | 레포지토리 | 기술 스택 | 역할 | 포트 |
 |----------|---------|-----|------|
-| **gateway-api** | Go + Fiber | API Gateway, BFF, 대기열 관리 | 8000 (REST), 8001 (gRPC) |
-| **reservation-api** | Kotlin + Spring Boot WebFlux | 예약 라이프사이클 관리, 60초 홀드 | 8010 (REST), 8011 (gRPC) |
-| **inventory-api** | Go + gRPC | 재고 관리, Zero Oversell 보장 | 8020 (REST), 8021 (gRPC) |
-| **payment-sim-api** | Go + gRPC | 결제 시뮬레이션, 웹훅 처리 | 8030 (REST), 8031 (gRPC) |
-| **reservation-worker** | Go/Kotlin | 백그라운드 작업 (만료/결제 처리) | 8040 (REST), 8041 (gRPC) |
-| **reservation-web** | React + Vite | 프론트엔드 SPA | 3000 |
-| **proto-contracts** | Protocol Buffers | gRPC 서비스 간 계약 정의 | - |
-| **infra-iac** | Terraform | AWS 인프라 코드 | - |
+| **[gateway-api](https://github.com/traffic-tacos/gateway-api)** | Go + Fiber | API Gateway, BFF, 대기열 관리 | 8000 (REST), 8001 (gRPC) |
+| **[reservation-api](https://github.com/traffic-tacos/reservation-api)** | Kotlin + Spring Boot WebFlux | 예약 라이프사이클 관리, 60초 홀드 | 8010 (REST), 8011 (gRPC) |
+| **[inventory-api](https://github.com/traffic-tacos/inventory-api)** | Go + gRPC | 재고 관리, Zero Oversell 보장 | 8020 (REST), 8021 (gRPC) |
+| **[payment-sim-api](https://github.com/traffic-tacos/payment-sim-api)** | Go + gRPC | 결제 시뮬레이션, 웹훅 처리 | 8030 (REST), 8031 (gRPC) |
+| **[reservation-worker](https://github.com/traffic-tacos/reservation-worker)** | Go/Kotlin | 백그라운드 작업 (만료/결제 처리) | 8040 (REST), 8041 (gRPC) |
+| **[reservation-web](https://github.com/traffic-tacos/reservation-web)** | React + Vite | 프론트엔드 SPA | 3000 |
+| **[proto-contracts](https://github.com/traffic-tacos/proto-contracts)** | Protocol Buffers | gRPC 서비스 간 계약 정의 | - |
+| **[traffic-tacos-infra-iac](https://github.com/traffic-tacos/traffic-tacos-infra-iac)** | Terraform | AWS 인프라 코드 | - |
 
 ## 🛠️ 기술 스택
 
@@ -352,7 +352,7 @@ npm install && npm run build
 
 ```bash
 # Terraform 초기화
-cd infra-iac
+cd traffic-tacos-infra-iac
 terraform init
 
 # 인프라 배포
