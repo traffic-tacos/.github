@@ -567,53 +567,28 @@ perf: 성능 개선
 4. PR 생성 및 리뷰 요청
 5. Merge 승인 후 배포
 
-## 🗺️ 로드맵
-
-### Q1 2025 (완료)
-- ✅ 기본 MSA 아키텍처 구축
-- ✅ AWS EKS 클러스터 배포
-- ✅ 6개 핵심 마이크로서비스 개발
-- ✅ 30k RPS 성능 테스트 통과
-
-### Q2 2025 (진행중)
-- 🔄 Multi-region 배포 아키텍처
-- 🔄 AI 기반 트래픽 예측 시스템
-- 🔄 고급 모니터링 대시보드
-- 🔄 Chaos Engineering 적용
-
-### Q3 2025 (계획)
-- 📅 Serverless 하이브리드 아키텍처
-- 📅 실시간 좌석 선택 UI 개선
-- 📅 글로벌 CDN 최적화
-- 📅 FinOps 자동화 시스템
-
-### Q4 2025 (계획)
-- 📅 100k RPS 처리 능력 확장
-- 📅 ML 기반 부정 거래 탐지
-- 📅 커뮤니티 에디션 오픈소스화
-
 ## 👏 기여자
 
 <div align="center">
 
-이 프로젝트는 훌륭한 팀원들의 헌신으로 만들어졌습니다.
+Traffic Tacos는 열정적인 팀원들의 협업으로 만들어지고 있습니다.
 
-[![Contributors](https://contrib.rocks/image?repo=traffic-tacos/.github)](https://github.com/traffic-tacos/.github/graphs/contributors)
+### 전체 기여 현황
+
+| 레포지토리 | 주요 기여자 |
+|-----------|------------|
+| [gateway-api](https://github.com/traffic-tacos/gateway-api) | ![Contributors](https://img.shields.io/github/contributors/traffic-tacos/gateway-api?style=flat-square) |
+| [reservation-api](https://github.com/traffic-tacos/reservation-api) | ![Contributors](https://img.shields.io/github/contributors/traffic-tacos/reservation-api?style=flat-square) |
+| [inventory-api](https://github.com/traffic-tacos/inventory-api) | ![Contributors](https://img.shields.io/github/contributors/traffic-tacos/inventory-api?style=flat-square) |
+| [payment-sim-api](https://github.com/traffic-tacos/payment-sim-api) | ![Contributors](https://img.shields.io/github/contributors/traffic-tacos/payment-sim-api?style=flat-square) |
+| [reservation-worker](https://github.com/traffic-tacos/reservation-worker) | ![Contributors](https://img.shields.io/github/contributors/traffic-tacos/reservation-worker?style=flat-square) |
+| [reservation-web](https://github.com/traffic-tacos/reservation-web) | ![Contributors](https://img.shields.io/github/contributors/traffic-tacos/reservation-web?style=flat-square) |
+
+**총 커밋 수**: ![Total Commits](https://img.shields.io/badge/dynamic/json?color=blue&label=commits&query=%24.totalCommits&url=https%3A%2F%2Fapi.github.com%2Forgs%2Ftraffic-tacos%2Frepos&style=flat-square)
+
+📊 [상세 기여 통계 보기](https://github.com/orgs/traffic-tacos/people) | 💻 [레포지토리 둘러보기](https://github.com/orgs/traffic-tacos/repositories)
 
 </div>
-
-## 📝 기술 블로그 & 발표 자료
-
-### 블로그 포스트
-- 📄 [30k RPS 트래픽을 처리하는 티켓팅 시스템 아키텍처](#) - 2025.01
-- 📄 [Zero Oversell을 보장하는 재고 관리 시스템](#) - 2025.02
-- 📄 [Event-Driven Architecture로 확장성 확보하기](#) - 2025.03
-- 📄 [Kubernetes에서 KEDA를 활용한 Auto-scaling](#) - 2025.04
-
-### 컨퍼런스 발표
-- 🎤 [AWS Summit 2025: EKS 기반 MSA 플랫폼 구축 사례](#)
-- 🎤 [KubeCon 2025: KEDA와 Event-driven Scaling](#)
-- 🎤 [DevOps Korea: GitOps로 안전한 배포 파이프라인 구축](#)
 
 ## 💬 문의 및 지원
 
@@ -621,9 +596,7 @@ perf: 성능 개선
 버그 리포트나 기능 요청은 [GitHub Issues](https://github.com/traffic-tacos/.github/issues)에 등록해주세요.
 
 ### 커뮤니케이션 채널
-- 💬 **Slack**: [traffic-tacos.slack.com](#) (팀 내부)
-- 📧 **Email**: contact@traffic-tacos.dev
-- 📺 **YouTube**: [Traffic Tacos Tech](#) (기술 세미나)
+- 📧 **Email**: xnslqjtmghaf@gmail.com
 
 ### 보안 취약점 제보
 보안 관련 이슈는 **security@traffic-tacos.dev**로 비공개로 제보해주세요.
@@ -652,11 +625,6 @@ All Rights Reserved.
 ## 🙏 감사의 말
 
 Traffic Tacos 프로젝트에 기여해주신 모든 분들께 감사드립니다.
-
-특별히 다음 프로젝트들에서 영감을 받았습니다:
-- [Kubernetes](https://kubernetes.io/) - 컨테이너 오케스트레이션
-- [ArgoCD](https://argo-cd.readthedocs.io/) - GitOps 배포
-- [KEDA](https://keda.sh/) - 이벤트 기반 Auto-scaling
 
 ---
 
